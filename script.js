@@ -1,10 +1,14 @@
 document.getElementById("checkout-button").addEventListener("click", async () => {
-  const response = await fetch("https://payment-app-8gu5.onrender.com/create-checkout-session", {
-    method: "POST",
-  });
+  try {
+    const response = await fetch("https://payment-app.onrender.com/create-checkout-session", {
+      method: "POST",
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  // Redirect to Stripe Checkout
-  window.location.href = data.url;
+    window.location.href = data.url;
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong. Check console.");
+  }
 });
