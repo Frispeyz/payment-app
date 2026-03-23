@@ -1,14 +1,26 @@
-document.getElementById("checkout-button").addEventListener("click", async () => {
-  try {
-    const response = await fetch("https://payment-app.onrender.com/create-checkout-session", {
-      method: "POST",
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.getElementById("checkout-button");
 
-    const data = await response.json();
+  console.log("Button found:", button); // DEBUG
 
-    window.location.href = data.url;
-  } catch (error) {
-    console.error("Error:", error);
-    alert("Something went wrong. Check console.");
-  }
+  button.addEventListener("click", async () => {
+    console.log("Button clicked"); // DEBUG
+
+    try {
+      const response = await fetch("https://payment-app.onrender.com/create-checkout-session", {
+        method: "POST",
+      });
+
+      console.log("Response:", response); // DEBUG
+
+      const data = await response.json();
+
+      console.log("Data:", data); // DEBUG
+
+      window.location.href = data.url;
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong. Check console.");
+    }
+  });
 });
