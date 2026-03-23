@@ -1,15 +1,3 @@
-<h2>Test Product</h2>
-<p>Price: $1.00</p>
-
-<button onclick="buyItem()">Buy $1 Test Item</button>
-
-<script>
-async function buyItem() {
-  const res = await fetch("https://buy.stripe.com/test_14A9AT7KQeYf6rNeF0fQI00", {
-    method: "POST"
-  });
-
-  const data = await res.json();
-  window.location = data.url;
-}
-</script>
+<a href="https://buy.stripe.com/test_14A9AT7KQeYf6rNeF0fQI00">
+  <button>Buy $1 Test Item</button>
+</a>
