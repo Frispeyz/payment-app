@@ -1,4 +1,3 @@
-alert("JS LOADED");
 document.getElementById("checkout-button").addEventListener("click", async () => {
   try {
     const response = await fetch("https://payment-app.onrender.com/create-checkout-session", {
