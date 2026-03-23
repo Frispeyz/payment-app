@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Button clicked"); // DEBUG
 
     try {
-      const response = await fetch("https://payment-app.onrender.com/create-checkout-session", {
+      const response = await fetch("https://payment-app-8gu5.onrender.com/create-checkout-session", {
         method: "POST",
       });
 
