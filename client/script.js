@@ -1,6 +1,8 @@
+const BACKEND_URL = "https://payment-app-1-g5ja.onrender.com";
+
 document.getElementById("checkout-button").addEventListener("click", async () => {
   try {
-    const response = await fetch("http://localhost:4242/create-checkout-session", {
+    const response = await fetch(`${BACKEND_URL}/create-checkout-session`, {
       method: "POST",
     });
 
@@ -11,6 +13,6 @@ document.getElementById("checkout-button").addEventListener("click", async () =>
 
   } catch (error) {
     console.error("Error:", error);
-    alert("Something went wrong.");
+    alert("Payment failed. Try again.");
   }
 });
